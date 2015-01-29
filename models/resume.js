@@ -6,9 +6,7 @@ var ResumeSchema = new Schema({
   name  : String,
   email : String,
   phone : String,
-  positions : [
-    { type: Schema.ObjectId, ref : 'position'}
-  ]
-}, { collection : 'meta' });
+  positions : [{ type: Schema.Types.ObjectId, ref : 'position'}]
+});
 
 module.exports = mongoose.model('resume', ResumeSchema);

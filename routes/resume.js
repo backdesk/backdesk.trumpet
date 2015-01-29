@@ -5,16 +5,12 @@ var express = require('express'),
 var Resume = require('../models/resume');
 
 router.get('/resume', function (req, res) {
-    Resume.findOne(function (err, meta) {
-        var opts = {
-            path: 'positions',
-            model: 'position'
-        };
-
-        Resume.populate(meta, opts, function (err, test) {
-            res.json(test);
-        })
-    })
+    Resume
+    .findOne()
+    .populate('positions')
+    .exec(function (err, resume) {
+        res.json(resume);
+    });
 });
 
 router.get('/test', function (req, res) {
