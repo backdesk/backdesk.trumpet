@@ -1,12 +1,12 @@
 var mongoose = require('mongoose'),
-    position = require('./position'),
+    work = require('./work'),
     Schema = mongoose.Schema;
 
 var ResumeSchema = new Schema({
   name  : String,
   email : String,
   phone : String,
-  positions : [{ type: Schema.Types.ObjectId, ref : 'position'}]
+  work : [{ type: Schema.ObjectId, ref : 'work'}]
 });
 
 module.exports = mongoose.model('resume', ResumeSchema);
