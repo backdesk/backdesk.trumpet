@@ -3,7 +3,13 @@ var Marionette = require('backbone.marionette'),
     template = require('../templates/work.child.html');
 
 var WorkItemView = Backbone.Marionette.ItemView.extend({
-    template : template
+  template : template,
+
+  templateHelpers: {
+    getSummary : function() {
+      return marked(this.summary);
+    }
+  }
 });
 
 module.exports = WorkItemView;
