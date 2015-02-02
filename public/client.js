@@ -1,11 +1,15 @@
 var Marionette = require('backbone.marionette'),
-    Router = require('./scripts/resume.router');
+    router = require('./scripts/resume.router');
 
 var resume = new Marionette.Application();
 
-resume.addInitializer(function(options){
-  new Router();
+resume.addInitializer(function () {
+  $(document).ajaxError(function (e, xhr, options) {
+    router.gotoAuth();
+  });
+});
 
+resume.addInitializer(function(options){
   Backbone.history.start();
 });
 

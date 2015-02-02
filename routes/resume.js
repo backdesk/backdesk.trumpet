@@ -13,15 +13,4 @@ router.get('/resume', function (req, res) {
     });
 });
 
-router.get('/test', function (req, res) {
-    req.user = {
-        token: jwt.sign({
-            _id : 0,
-            scopes: []
-        }, 'test', { expiresInMinutes: 10080 })
-    };
-
-    res.end(req.user.token);
-});
-
 module.exports = router;

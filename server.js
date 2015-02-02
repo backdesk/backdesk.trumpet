@@ -1,7 +1,8 @@
 var express = require('express'),
     jwt = require('jsonwebtoken'),
     path = require('path'),
-    routes = require('./routes/resume'),
+    restRoutes = require('./routes/resume'),
+    userRoutes = require('./routes/user'),
     expressJwt = require('express-jwt');
 
 // TODO: Use winston for logging and move to module.
@@ -13,13 +14,12 @@ var app = express();
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-/*
 app.use(expressJwt({
     secret : 'test'
-}).unless({ path : '/test'}));
-*/
+}).unless({ path : '/user/auth'}));
 
-app.use('/api', routes);
+app.use('/user', userRoutes);
+app.use('/api',  restRoutes);
 
 
 var host = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1',

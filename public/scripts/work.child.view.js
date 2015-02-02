@@ -5,6 +5,8 @@ var Marionette = require('backbone.marionette'),
 var WorkItemView = Backbone.Marionette.ItemView.extend({
   template : template,
 
+  tagName : 'article',
+
   templateHelpers: {
     getSummary : function() {
       return marked(this.summary);

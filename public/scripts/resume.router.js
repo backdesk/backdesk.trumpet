@@ -5,8 +5,23 @@ var Router = Backbone.Marionette.AppRouter.extend({
   controller: new Controller(),
 
   appRoutes: {
-    '' : 'main'
+    '' : 'main',
+    'auth' : 'auth'
+  },
+
+  initialize : function () {
+    console.log('starting...');
+  },
+
+  gotoAuth : function () {
+    this.navigate('auth');
+    this.controller.auth();
+  },
+
+  gotoMain : function () {
+    this.navigate('/');
+    this.controller.main();
   }
 });
 
-module.exports = Router;
+module.exports = new Router();
