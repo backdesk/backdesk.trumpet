@@ -5,7 +5,7 @@ var resume = new Marionette.Application({
     controller : new Controller()
 });
 
-resume.addInitializer(function(options){
+resume.addInitializer(function () {
   resume.controller.main();
 });
 

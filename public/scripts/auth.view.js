@@ -4,7 +4,7 @@ var Marionette = require('backbone.marionette'),
     userModel = require('./user.model'),
     template = require('../templates/auth.html');
 
-var AuthView = Backbone.Marionette.ItemView.extend({
+var AuthView = Marionette.ItemView.extend({
   template : template,
 
   events : {
@@ -24,7 +24,7 @@ var AuthView = Backbone.Marionette.ItemView.extend({
     return credential;
   },
 
-  _onSubmit : function (e) {
+  _onSubmit : function () {
     var errors = [], email = $('input[name=email]'), token = $('input[name=token]');
 
     // TODO: Move to model validation.

@@ -2,7 +2,7 @@ var Marionette = require('backbone.marionette'),
     marked = require('marked'),
     template = require('../templates/work.child.html');
 
-var WorkItemView = Backbone.Marionette.ItemView.extend({
+var WorkItemView = Marionette.ItemView.extend({
   template : template,
 
   tagName : 'article',
