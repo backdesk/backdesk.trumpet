@@ -1,5 +1,4 @@
 var express = require('express'),
-    jwt = require('jsonwebtoken'),
     router  = express.Router();
 
 var Resume = require('../models/resume');

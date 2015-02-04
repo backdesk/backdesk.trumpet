@@ -1,6 +1,5 @@
 var express = require('express'),
     bodyParser = require('body-parser'),
-    jwt = require('jsonwebtoken'),
     path = require('path'),
     restRoutes = require('./routes/resume'),
     userRoutes = require('./routes/user'),
