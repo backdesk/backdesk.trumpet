@@ -13,8 +13,6 @@ var ResumeController = Marionette.Controller.extend({
 
     this.layout = new ResumeLayout();
     this.resume = new ResumeModel();
-
-    console.log(this);
   },
 
   main : function () {
@@ -44,7 +42,7 @@ var ResumeController = Marionette.Controller.extend({
   },
 
   _onResumeFail : function () {
-    console.log('fail');
+    this.auth();
   }
 });
 

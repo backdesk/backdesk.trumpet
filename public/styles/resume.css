@@ -1,0 +1,95 @@
+body {
+   font-size: 17px;
+   font-family: "Source Sans Pro";
+   font-style: normal;
+   font-weight: 400;
+   width: 70%; margin: 0 auto;
+}
+
+
+h1 {
+   font-size: 43px;
+   line-height: 73px;
+   margin: 0;
+}
+
+h2 {
+   font-weight: 300;
+   margin: 0;
+}
+
+p {
+   width: 570px;
+}
+
+header {
+   clear : both;
+}
+
+article {
+   margin-top: 35px;
+}
+
+h3 {
+   font-weight: 400;
+   font-size: 22px;
+   line-height: 30px;
+   margin: 0;
+}
+article header {
+   border-bottom: 1px solid #eee;
+}
+
+
+article header p {
+   font-weight: 500;
+}
+
+article p, article li {
+   line-height: 26px;
+   margin: 5px 0;
+   font-weight: 400;
+}
+
+.contact {
+   width: 200px;
+   float: right;
+   padding: 30px;
+   text-align: right;
+}
+
+.break {
+   page-break-after: always;
+}
+
+#education {
+   margin-top: 25px;
+}
+
+#skills {
+   margin-top: 25px;
+}
+
+#skills h3, #education h3 {
+   border-bottom: 1px solid #eee;
+   padding-bottom: 5px;
+}
+
+#skills p {
+}
+
+#skills ul  {
+   margin: 5px 0;
+   padding: 0;
+   list-style: none;
+}
+
+#skills ul ul {
+   margin-bottom: 10px;
+   margin-left:10px;
+}
+
+#skills ul li ul li {
+   display: inline;
+   font-size: 15px;
+}

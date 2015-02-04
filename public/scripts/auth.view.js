@@ -25,10 +25,9 @@ var AuthView = Backbone.Marionette.ItemView.extend({
   },
 
   _onSubmit : function (e) {
-    e.preventDefault();
-
     var errors = [], email = $('input[name=email]'), token = $('input[name=token]');
 
+    // TODO: Move to model validation.
     email = this._sanitizeCredential(email.val());
     if(!validator.isEmail(email)) {
       errors.push('invalid email');
@@ -58,7 +57,7 @@ var AuthView = Backbone.Marionette.ItemView.extend({
   },
 
   _onAuthFailure : function () {
-    console.log('auth failure');
+    console.log('auth failed');
   }
 });
 
