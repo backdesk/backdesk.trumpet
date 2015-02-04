@@ -2,7 +2,7 @@ var UserModel = Backbone.Model.extend({
   url : '/user/auth',
 
   defaults : {
-      token : null
+    token : null
   },
 
   initialize : function () {
