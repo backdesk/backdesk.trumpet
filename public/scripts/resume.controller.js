@@ -3,16 +3,17 @@ var Marionette = require('backbone.marionette'),
     userModel = require('./user.model'),
     ResumeModel = require('./resume.model'),
     ResumeLayout = require('./resume.layout'),
-    AuthView = require('./auth.view'),
-    WorkCollection = require('./work.collection'),
-    WorkCollectionView = require('./work.collection.view');
+    AuthView = require('./auth.view');
 
 var ResumeController = Marionette.Controller.extend({
   initialize : function () {
     _.bindAll(this, 'main', '_onResumeDone', '_onResumeFail');
 
-    this.layout = new ResumeLayout();
     this.resume = new ResumeModel();
+
+    this.layout = new ResumeLayout({
+      model : this.resume
+    });
   },
 
   main : function () {
@@ -35,10 +36,6 @@ var ResumeController = Marionette.Controller.extend({
 
   _onResumeDone : function () {
     this.layout.render();
-
-    this.layout.getRegion('work').show(new WorkCollectionView({
-      collection : new WorkCollection(this.resume.get('work'))
-    }));
   },
 
   _onResumeFail : function () {
