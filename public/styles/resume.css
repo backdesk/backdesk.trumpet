@@ -3,7 +3,17 @@ body {
    font-family: "Source Sans Pro";
    font-style: normal;
    font-weight: 400;
-   width: 70%; margin: 0 auto;
+}
+
+main  {
+   width: 60%;
+   max-width: 560px;
+   float: left;
+}
+
+aside {
+   width: 34%;
+   float: right;
 }
 
 
@@ -49,6 +59,10 @@ article p, article li {
    line-height: 26px;
    margin: 5px 0;
    font-weight: 400;
+}
+
+.container {
+   width: 60%; margin: 0 auto;
 }
 
 .contact {
