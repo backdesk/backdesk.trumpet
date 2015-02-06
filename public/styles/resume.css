@@ -62,29 +62,33 @@ article p, article li {
    font-weight: 400;
 }
 
-#availability ul {
+.side-block {
+   margin-bottom: 20px;
+}
+
+.side-block ul {
    list-style : none;
    margin:0;
    padding:0;
 }
 
-#availability li {
+.side-block li {
    margin:0;
    padding:0;
 }
 
-#availability p i {
+.side-block p i {
    margin-right: 5px;
 }
 
-#availability li p {
+.side-block li p {
    margin: 0;
    width : auto;
    font-size: 15px !important;
    opacity: 0.9;
 }
 
-#availability h4 {
+.side-block h4 {
    margin: 0 0 5px 0;
    font-weight: normal;
    width : auto;
@@ -114,6 +118,7 @@ article p, article li {
 
 .container {
    width: 60%; margin: 0 auto;
+   overflow: hidden;
 }
 
 .contact {
@@ -157,4 +162,12 @@ article p, article li {
 #skills ul li ul li {
    display: inline;
    font-size: 15px;
+}
+
+footer {
+   padding: 10px;
+   margin-top: 10px;
+   border-top: 1px solid #eee;
+   clear: both;
+   text-align: center;
 }
