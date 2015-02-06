@@ -6,6 +6,7 @@ var ResumeSchema = new Schema({
   name  : String,
   email : String,
   phone : String,
+  availableFrom : Date,
   work : [{ type: Schema.ObjectId, ref : 'work'}]
 });
 

@@ -1,4 +1,5 @@
 var Marionette = require('backbone.marionette'),
+    SideView = require('./side.view'),
     MetaView = require('./meta.view'),
     MetaModel = require('./meta.model'),
     WorkCollection = require('./work.collection'),
@@ -8,20 +9,27 @@ var Marionette = require('backbone.marionette'),
 var ResumeView = Marionette.LayoutView.extend({
   template : template,
 
-  el : 'main',
+  el : 'body',
 
   regions: {
     work : '#work',
-    meta : '#meta'
+    meta : '#meta',
+    side : '#side'
   },
 
   onRender : function () {
+    var meta = new MetaModel(this.model.get('basics'));
+
     this.meta.show(new MetaView({
-      model : new MetaModel(this.model.get('basics'))
+      model : meta
     }));
 
     this.work.show(new WorkCollectionView({
       collection : new WorkCollection(this.model.get('work'))
+    }));
+
+    this.side.show(new SideView({
+      model : meta
     }));
   }
 });
