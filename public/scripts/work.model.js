@@ -1,5 +1,9 @@
 var WorkModel = Backbone.Model.extend({
-  url : '/resume/work'
+  url : '/resume/work',
+
+  defaults : {
+    endData : null
+  }
 });
 
 module.exports = new WorkModel();
