@@ -9,7 +9,7 @@ var Marionette = require('backbone.marionette'),
 var ResumeView = Marionette.LayoutView.extend({
   template : template,
 
-  el : 'body',
+  el : '.container',
 
   regions: {
     work : '#work',

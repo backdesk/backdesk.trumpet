@@ -29,7 +29,7 @@ var ResumeController = Marionette.Controller.extend({
   },
 
   auth : function () {
-    $('main').html(new AuthView({
+    $('.container').html(new AuthView({
       onAuthSuccess : this.main
     }).render().el);
   },

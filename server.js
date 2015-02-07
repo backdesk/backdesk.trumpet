@@ -1,14 +1,17 @@
 var express = require('express'),
+    winston = require('winston'),
+    mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
     path = require('path'),
     restRoutes = require('./routes/resume'),
     userRoutes = require('./routes/user'),
     expressJwt = require('express-jwt');
 
-// TODO: Use winston for logging and move to module.
-var mongoose = require('mongoose');
-
-mongoose.connect('mongodb://localhost/resume');
+mongoose.connect('mongodb://localhost/resume', function (err) {
+	if (err) {
+		winston.error('MongoDB', err);
+	}
+});
 
 var app = express();
 
