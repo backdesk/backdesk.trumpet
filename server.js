@@ -8,9 +8,9 @@ var express = require('express'),
     expressJwt = require('express-jwt');
 
 mongoose.connect('mongodb://localhost/resume', function (err) {
-	if (err) {
-		winston.error('MongoDB', err);
-	}
+  if (err) {
+    winston.error('MongoDB', err);
+  }
 });
 
 var app = express();
@@ -31,5 +31,5 @@ var host = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1',
     port = process.env.OPENSHIFT_NODEJS_PORT || 9999;
 
 app.listen(port, host, function () {
-	winston.info('App', 'Starting on ' + host + ':' + port);
+  winston.info('App', 'Starting on ' + host + ':' + port);
 });
