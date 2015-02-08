@@ -30,4 +30,6 @@ app.use('/api',  restRoutes);
 var host = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1',
     port = process.env.OPENSHIFT_NODEJS_PORT || 9999;
 
-app.listen(port, host);
+app.listen(port, host, function () {
+	winston.info('App', 'Starting on ' + host + ':' + port);
+});
