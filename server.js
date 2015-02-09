@@ -19,14 +19,6 @@ app.use(expressJwt({
   secret : 'mv2qtuWbU9N7dLZB5bnt'
 }).unless({ path : ['/user/auth']}));
 
-app.use(function (err, req, res, next) {
-  console.log(err.name);
-
-  if (err.name === 'UnauthorizedError') {
-    res.sendStatus(401);
-  }
-});
-
 /*
 app.use(expressWinston.logger({
   transports: [
