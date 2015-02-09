@@ -13,12 +13,11 @@ var ResumeView = Marionette.LayoutView.extend({
 
   regions: {
     work : '#work',
-    meta : '#meta',
-    side : '#side'
+    meta : '#meta'
   },
 
   onRender : function () {
-    var meta = new MetaModel(this.model.get('basics'));
+    var side, meta = new MetaModel(this.model.get('basics'));
 
     this.meta.show(new MetaView({
       model : meta
@@ -26,10 +25,6 @@ var ResumeView = Marionette.LayoutView.extend({
 
     this.work.show(new WorkCollectionView({
       collection : new WorkCollection(this.model.get('work'))
-    }));
-
-    this.side.show(new SideView({
-      model : meta
     }));
   }
 });
