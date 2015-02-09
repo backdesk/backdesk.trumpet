@@ -1,18 +1,12 @@
 var express = require('express'),
     winston = require('winston'),
-    mongoose = require('mongoose'),
+    expressWinston = require('express-winston'),
     bodyParser = require('body-parser'),
     path = require('path'),
-    config = require('config'),
+    mongoose = require('./mongoose'),
     restRoutes = require('./routes/resume'),
     userRoutes = require('./routes/user'),
     expressJwt = require('express-jwt');
-
-mongoose.connect(config.get('mongo.uri'), function (err) {
-  if (err) {
-    winston.error('MongoDB', err);
-  }
-});
 
 var app = express();
 
@@ -22,14 +16,27 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(expressJwt({
-    secret : 'mv2qtuWbU9N7dLZB5bnt'
+  secret : 'mv2qtuWbU9N7dLZB5bnt'
 }).unless({ path : ['/user/auth']}));
 
 app.use(function (err, req, res, next) {
+  console.log(err.name);
+
   if (err.name === 'UnauthorizedError') {
-    res.sendStatus(401, 'invalid token...');
+    res.sendStatus(401);
   }
 });
+
+/*
+app.use(expressWinston.logger({
+  transports: [
+    new winston.transports.Console({
+      json: true,
+      colorize: true
+    })
+  ]
+}));
+*/
 
 app.use('/user', userRoutes);
 app.use('/api',  restRoutes);
