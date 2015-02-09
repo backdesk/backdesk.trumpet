@@ -1,6 +1,5 @@
 var express = require('express'),
     winston = require('winston'),
-    expressWinston = require('express-winston'),
     bodyParser = require('body-parser'),
     path = require('path'),
     mongoose = require('./mongoose'),
@@ -18,17 +17,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(expressJwt({
   secret : 'mv2qtuWbU9N7dLZB5bnt'
 }).unless({ path : ['/user/auth']}));
-
-/*
-app.use(expressWinston.logger({
-  transports: [
-    new winston.transports.Console({
-      json: true,
-      colorize: true
-    })
-  ]
-}));
-*/
 
 app.use('/user', userRoutes);
 app.use('/api',  restRoutes);
