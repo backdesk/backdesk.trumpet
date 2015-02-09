@@ -3,11 +3,12 @@ var express = require('express'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
     path = require('path'),
+    config = require('config'),
     restRoutes = require('./routes/resume'),
     userRoutes = require('./routes/user'),
     expressJwt = require('express-jwt');
 
-mongoose.connect('mongodb://localhost/resume', function (err) {
+mongoose.connect(config.get('mongo.uri'), function (err) {
   if (err) {
     winston.error('MongoDB', err);
   }
@@ -22,7 +23,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(expressJwt({
     secret : 'mv2qtuWbU9N7dLZB5bnt'
-}).unless({ path : '/user/auth'}));
+}).unless({ path : ['/user/auth']}));
+
+app.use(function (err, req, res, next) {
+  if (err.name === 'UnauthorizedError') {
+    res.sendStatus(401, 'invalid token...');
+  }
+});
 
 app.use('/user', userRoutes);
 app.use('/api',  restRoutes);
