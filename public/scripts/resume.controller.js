@@ -1,7 +1,7 @@
 var Marionette = require('backbone.marionette'),
     _ = require('underscore'),
     userModel = require('./user.model'),
-    ResumeModel = require('./resume.model'),
+    resumeModel = require('./resume.model'),
     ResumeLayout = require('./resume.layout'),
     AuthView = require('./auth.view');
 
@@ -11,7 +11,7 @@ var ResumeController = Marionette.Object.extend({
 
     _.extend(this, _.pick(options, 'layout', 'region'));
 
-    this.resume = new ResumeModel();
+    this.resume = resumeModel;
 
     this.listenTo(this.layout, 'render', function(){
       this.show(this.options.region)

@@ -1,16 +1,27 @@
 var Marionette = require('backbone.marionette'),
     AvailabilityView = require('./availability.view'),
+    AvailabilityModel = require('./availability.model'),
     template = require('../templates/side.html');
 
-var SideLayout = Marionette.ItemView.extend({
+var SideLayout = Marionette.LayoutView.extend({
   id : 'side-menu',
 
   template : template,
 
-  onRender : function () {
-    this.$el.append(new AvailabilityView({
+  regions : {
+    availability : '#availability'
+  },
 
-    }).render().el);
+  _showAvailability : function () {
+    this.availability.show(new AvailabilityView({
+      model : new AvailabilityModel(this.model.get('availability'))
+    }));
+  },
+
+  onRender : function () {
+    this.listenTo(this.model, 'change:availability', function () {
+      this._showAvailability();
+    })
   }
 });
 

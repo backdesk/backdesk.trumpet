@@ -9,12 +9,12 @@ var AvailabilityView = Marionette.ItemView.extend({
 
   templateHelpers: {
     getAvailability : function() {
-      var availableFrom = moment(this.availableFrom);
+      var from = moment(this.from);
 
-      if(moment().isAfter(availableFrom)) {
+      if(moment().isAfter(from)) {
         return 'Available to start immediately.';
       } else {
-        return 'Available from ' + availableFrom.format('Do MMMM YYYY');
+        return 'Available from ' + from.format('Do MMMM YYYY');
       }
     }
   }
