@@ -20,8 +20,7 @@ module.exports = function(config) {
 
     // list of preprocessors
     preprocessors: {
-        //'public/scripts/**/*.js': ['webpack','coverage'],
-        'test/**/*.spec.js': ['webpack', 'coverage']
+        'test/**/*.spec.js': ['webpack']
     },
 
 
