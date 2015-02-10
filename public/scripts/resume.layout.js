@@ -1,5 +1,4 @@
 var Marionette = require('backbone.marionette'),
-    SideView = require('./side.view'),
     MetaView = require('./meta.view'),
     MetaModel = require('./meta.model'),
     WorkCollection = require('./work.collection'),
