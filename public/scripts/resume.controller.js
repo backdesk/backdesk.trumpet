@@ -5,18 +5,20 @@ var Marionette = require('backbone.marionette'),
     ResumeLayout = require('./resume.layout'),
     AuthView = require('./auth.view');
 
-var ResumeController = Marionette.Controller.extend({
-  initialize : function () {
-    _.bindAll(this, 'main', '_onResumeDone', '_onResumeFail');
+var ResumeController = Marionette.Object.extend({
+  initialize : function (options) {
+    _.bindAll(this, 'show', '_onResumeDone', '_onResumeFail');
+
+    _.extend(this, _.pick(options, 'layout', 'region'));
 
     this.resume = new ResumeModel();
 
-    this.layout = new ResumeLayout({
-      model : this.resume
+    this.listenTo(this.layout, 'render', function(){
+      this.show(this.options.region)
     });
   },
 
-  main : function () {
+  show : function () {
     if(userModel.get('token')) {
       this.resume.fetch({
         headers : {
@@ -29,13 +31,23 @@ var ResumeController = Marionette.Controller.extend({
   },
 
   auth : function () {
-    $('.container').html(new AuthView({
-      onAuthSuccess : this.main
-    }).render().el);
+    this._getRegion().show(new AuthView({
+      onAuthSuccess : this.show
+    }));
+  },
+
+  _getRegion : function () {
+    if(!this.layout) {
+      throw 'No layout provided';
+    }
+
+    return this.layout.getRegion(this.region);
   },
 
   _onResumeDone : function () {
-    this.layout.render();
+    this._getRegion().show(new ResumeLayout({
+      model : this.resume
+    }));
   },
 
   _onResumeFail : function () {

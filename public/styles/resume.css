@@ -5,7 +5,7 @@ body {
    font-weight: 400;
 }
 
-main  {
+#resume  {
    width: 60%;
    max-width: 560px;
    float: left;
@@ -116,7 +116,7 @@ article p, article li {
    color: #000;
 }
 
-.container {
+main {
    width: 60%; margin: 0 auto;
    overflow: hidden;
 }

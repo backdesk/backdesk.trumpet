@@ -9,7 +9,7 @@ var Marionette = require('backbone.marionette'),
 var ResumeView = Marionette.LayoutView.extend({
   template : template,
 
-  el : '.container',
+  id : 'resume',
 
   regions: {
     work : '#work',
@@ -17,7 +17,7 @@ var ResumeView = Marionette.LayoutView.extend({
   },
 
   onRender : function () {
-    var side, meta = new MetaModel(this.model.get('basics'));
+    var meta = new MetaModel(this.model.get('basics'));
 
     this.meta.show(new MetaView({
       model : meta
