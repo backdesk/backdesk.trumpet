@@ -23,7 +23,7 @@ describe('resume controller', function () {
     }).toThrow(new Error('Please provide a layout'));
   });
 
-  it('should prompt to auth when unauthorized', function () {
+  it('should call to auth when unauthorized', function () {
     var ctrl = new ResumeController({
       layout : layout,
       region : 'main'

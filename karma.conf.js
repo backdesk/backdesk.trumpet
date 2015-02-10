@@ -14,13 +14,14 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'test/**/*spec.js'
+        'test/**/*spec.js'
     ],
 
 
     // list of preprocessors
     preprocessors: {
-        'test/**/*.spec.js': ['webpack']
+        //'public/scripts/**/*.js': ['webpack','coverage'],
+        'test/**/*.spec.js': ['webpack', 'coverage']
     },
 
 
@@ -36,7 +37,12 @@ module.exports = function(config) {
         module : {
             loaders: [
                 { test: /\.html$/, loader: 'underscore-template-loader' }
-            ]
+            ],
+            postLoaders: [ {
+                test: /\.js$/,
+                exclude: /(test|node_modules|bower_components)\//,
+                loader: 'istanbul-instrumenter'
+            }]
         },
 
         plugins: [
@@ -57,8 +63,12 @@ module.exports = function(config) {
 
     // test results reporter to use
     // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-    reporters: ['spec'],
+    reporters: ['spec', 'coverage'],
 
+    coverageReporter: {
+        type : 'html',
+        dir : './coverage'
+    },
 
     // web server port
     port: 9876,
@@ -101,6 +111,7 @@ module.exports = function(config) {
     // won't work here
     plugins: [
         require("karma-jasmine"),
+        require("karma-coverage"),
         require("karma-webpack"),
         require("karma-spec-reporter"),
         require("karma-phantomjs-launcher")
