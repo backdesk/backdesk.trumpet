@@ -19,6 +19,7 @@
     "backbone.marionette": "^2.3.2",
     "grunt": "^0.4.5",
     "grunt-karma": "^0.10.1",
+    "grunt-webpack": "^1.0.8",
     "istanbul": "^0.3.5",
     "istanbul-instrumenter-loader": "^0.1.2",
     "jasmine-core": "^2.2.0",
