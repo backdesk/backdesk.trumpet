@@ -11,6 +11,10 @@ var ResumeController = Marionette.Object.extend({
 
     _.extend(this, _.pick(options, 'layout', 'region'));
 
+    if(!this.layout) {
+      throw new Error('Please provide a layout');
+    }
+
     this.resume = resumeModel;
 
     this.listenTo(this.layout, 'render', function(){
