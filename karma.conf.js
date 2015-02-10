@@ -65,8 +65,8 @@ module.exports = function(config) {
     reporters: ['spec', 'coverage'],
 
     coverageReporter: {
-        type : 'html',
-        dir : './coverage'
+        type : 'lcovonly',
+        dir : './test/coverage'
     },
 
     // web server port
