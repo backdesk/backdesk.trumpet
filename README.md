@@ -1,1 +1,1 @@
-[![Code Climate](https://codeclimate.com/github/backdesk/resume/badges/gpa.svg)](https://codeclimate.com/github/backdesk/resume)
+[![Code Climate](https://codeclimate.com/github/backdesk/resume/badges/gpa.svg)](https://codeclimate.com/github/backdesk/resume) [![Build Status](https://travis-ci.org/backdesk/resume.svg?branch=master)](https://travis-ci.org/backdesk/resume)
