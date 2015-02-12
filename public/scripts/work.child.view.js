@@ -7,10 +7,34 @@ var WorkItemView = Marionette.ItemView.extend({
 
   tagName : 'article',
 
-  templateHelpers: {
-    getSummary : function() {
-      return marked(this.summary);
+  events : {
+    'click .toggle' : 'onWorkToggled'
+  },
+
+  templateHelpers : function () {
+    var view = this;
+
+    return {
+      getSummary : function() {
+        return marked(this.summary);
+      },
+
+      getIcon : function () {
+        if (view.$el.attr('data-old')) {
+          return 'fa fa-plus-square-o'
+        }
+
+        return 'fa fa-minus-square-o'
+      }
     }
+  },
+
+  onWorkToggled : function (e) {
+    var inner = this.$('section');
+
+    inner.toggleClass('compress');
+
+    return false;
   }
 });
 

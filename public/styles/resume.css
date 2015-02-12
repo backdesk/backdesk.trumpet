@@ -171,3 +171,18 @@ footer {
    clear: both;
    text-align: center;
 }
+
+.compress {
+   height : 0;
+   overflow: hidden;
+}
+
+#work header i {
+   float: right;
+   margin: 5px 10px 0;
+   color: #646464;
+}
+
+#work header i:hover {
+   color: black;
+}
