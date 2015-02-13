@@ -51,23 +51,34 @@ h5, h6 {
 p {
   font-size: 1.0625em;
   /* 17px */
-  margin: 1em 0; }
+  line-height: 1.625em;
+  margin: 5px 0; }
+
+li {
+  font-size: 1.0625em;
+  /* 17px */ }
 
 #meta header h1 {
-  font-size: 2.6875em; }
+  font-size: 2.6875em;
+  margin: 0; }
 #meta header h2 {
   font-weight: 300; }
 
-.work-item header {
-  border-bottom: 1px solid #eee; }
-  .work-item header p {
-    font-weight: 500; }
-.work-item article p {
-  font-weight: 400; }
+.work-item {
+  margin-top: 2.1875em;
+  /* 35px */ }
+  .work-item header {
+    border-bottom: 1px solid #eee; }
+  .work-item section p {
+    font-weight: 400; }
+
+.work-item li {
+  line-height: 1.625em;
+  margin: 5px 0; }
 
 .work-item a.toggle {
   float: right;
-  margin: 5px 10px 0;
+  margin: 5px 0;
   color: #646464; }
 
 .work-item a.toggle:hover {

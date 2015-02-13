@@ -1,20 +1,23 @@
 .work-item {
+  margin-top: 2.1875em; /* 35px */
+
   header {
     border-bottom: 1px solid #eee;
-
-    p {
-      font-weight: 500;
-    }
   }
 
-  article p {
+  section p {
     font-weight: 400;
   }
 }
 
+.work-item li  {
+  line-height: 1.625em;
+  margin: 5px 0;
+}
+
 .work-item a.toggle {
   float: right;
-  margin: 5px 10px 0;
+  margin: 5px 0;
   color: #646464;
 }
 
