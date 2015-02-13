@@ -40,12 +40,38 @@ module.exports = function(grunt) {
         devtool : "sourcemap",
         debug : true
       }
+    },
+
+    sass: {
+      dist : {
+        files: {
+          'public/styles/main.css' : 'public/styles/sass/main.scss'
+        }
+      }
+    },
+
+    watch: {
+      options: {
+        spawn: false,
+      },
+
+      app : {
+        files : ['public/**/*.js'],
+        tasks : ['webpack:build-dev'],
+      },
+
+      css : {
+        files : ['public/**/*.scss'],
+        tasks : ['sass']
+      }
     }
   });
 
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-webpack');
 
-  grunt.registerTask('default', ['webpack:build']);
+  grunt.registerTask('default', ['watch']);
   grunt.registerTask("build", ["karma:ci","webpack:build"]);
 };
