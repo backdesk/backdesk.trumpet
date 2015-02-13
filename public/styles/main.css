@@ -77,8 +77,13 @@ li {
   /* 35px */ }
   .work-item header {
     border-bottom: 1px solid #eee; }
-  .work-item section p {
-    font-weight: 400; }
+  .work-item section {
+    -webkit-transition: all 0.15s ease-out;
+    -moz-transition: all 0.15s ease-out;
+    transition: all 0.15s ease-out;
+    opacity: 1; }
+    .work-item section p {
+      font-weight: 400; }
 
 .work-item li {
   line-height: 1.625em;
@@ -91,6 +96,16 @@ li {
 
 .work-item a.toggle:hover {
   color: #000; }
+
+.toggle i:before {
+  content: "\f147"; }
+
+.work-item[data-minified=true] .toggle i:before {
+  content: "\f196"; }
+.work-item[data-minified=true] section {
+  height: 0;
+  opacity: 0;
+  overflow: hidden; }
 
 .side-block {
   margin-bottom: 20px; }

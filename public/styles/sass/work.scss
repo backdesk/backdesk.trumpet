@@ -5,8 +5,13 @@
     border-bottom: 1px solid #eee;
   }
 
-  section p {
-    font-weight: 400;
+  section {
+    @include transition(all 0.15s ease-out);
+    opacity: 1;
+
+    p {
+      font-weight: 400;
+    }
   }
 }
 
@@ -24,3 +29,20 @@
 .work-item a.toggle:hover {
   color: #000;
 }
+
+.toggle i:before {
+  content:"\f147";
+}
+
+.work-item[data-minified=true] {
+  .toggle i:before {
+    content:"\f196";
+  }
+
+  section {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+}
+

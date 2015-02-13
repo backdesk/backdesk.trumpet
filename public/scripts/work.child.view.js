@@ -32,9 +32,11 @@ var WorkItemView = Marionette.ItemView.extend({
   },
 
   onWorkToggled : function (e) {
-    var inner = this.$('section');
-
-    inner.toggleClass('compress');
+    if(this.$el.attr('data-minified')) {
+      this.$el.removeAttr('data-minified');
+    } else {
+      this.$el.attr('data-minified', true);
+    }
 
     return false;
   }

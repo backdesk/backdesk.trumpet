@@ -19,7 +19,7 @@ var WorkCollectionView = Marionette.CollectionView.extend({
       if(child.get('endDate')) {
         age = moment().diff(moment(child.get('endDate')), 'years');
         if(age >= threshold) {
-          view.$el.attr('data-old', true);
+          view.$el.attr('data-minified', true);
         }
       }
 
