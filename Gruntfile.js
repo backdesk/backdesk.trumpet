@@ -35,6 +35,7 @@ module.exports = function(grunt) {
       },
 
       /**
+       * Development only options. Source maps aren't strictly necessary here.
        */
       "build-dev" : {
         devtool : "sourcemap",
@@ -42,6 +43,9 @@ module.exports = function(grunt) {
       }
     },
 
+    /**
+     * SASS Compilation.
+     */
     sass: {
       dist : {
         files: {
@@ -50,6 +54,9 @@ module.exports = function(grunt) {
       }
     },
 
+    /**
+     * Watch on all specified file types.
+     */
     watch: {
       options: {
         spawn: false,

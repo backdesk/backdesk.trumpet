@@ -1,0 +1,23 @@
+.work-item {
+  header {
+    border-bottom: 1px solid #eee;
+
+    p {
+      font-weight: 500;
+    }
+  }
+
+  article p {
+    font-weight: 400;
+  }
+}
+
+.work-item a.toggle {
+  float: right;
+  margin: 5px 10px 0;
+  color: #646464;
+}
+
+.work-item a.toggle:hover {
+  color: #000;
+}

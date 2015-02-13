@@ -1,0 +1,61 @@
+@import "bourbon/bourbon";
+
+/**
+ * Base layout.
+ */
+#app {
+  width: 60%; margin: 0 auto;
+  overflow: hidden;
+
+  main {
+    width: 60%;
+    float: left;
+  }
+
+  aside {
+    float: right;
+    width: 30%;
+  }
+}
+
+/**
+ * Base typography.
+ */
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0.5em 0;
+}
+
+h1 {
+  font-size: 2em; /* 32px */
+  line-height: 1.25em;
+}
+
+h2 {
+  font-size: 1.625em; /* 26px */
+  line-height: 1.15384615em;
+}
+
+h3 {
+  font-size: 1.375em; /* 22px */
+  line-height: 1.13636364em;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 1.125em; /* 18px */
+  line-height: 1.11111111em;
+}
+
+h5, h6 {
+  font-size: 1em; /* 16px */
+  font-weight : normal;
+}
+
+p {
+  margin: 1em 0;
+}

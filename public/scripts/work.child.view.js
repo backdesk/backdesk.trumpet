@@ -7,6 +7,8 @@ var WorkItemView = Marionette.ItemView.extend({
 
   tagName : 'article',
 
+  className : 'work-item',
+
   events : {
     'click .toggle' : 'onWorkToggled'
   },
