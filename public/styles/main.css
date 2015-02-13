@@ -1,74 +1,72 @@
-/**
- * Base layout.
- */
-#app {
-  width: 60%;
-  margin: 0 auto;
-  overflow: hidden; }
-  #app main {
-    width: 60%;
-    float: left; }
-  #app aside {
-    float: right;
-    width: 30%; }
+/*
+Error: Invalid CSS after "  margin": expected ";", was ": 1em 0;"
+        on line 61 of public/styles/sass/base.scss
+        from line 1 of public/styles/sass/main.scss
 
-/**
- * Base typography.
- */
-body {
-  font-family: 'Source Sans Pro', sans-serif; }
+56:   font-weight : normal;
+57: }
+58: 
+59: p {
+60:   font-size: 1.0625em /* 17px *\/
+61:   margin: 1em 0;
+62: }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Source Sans Pro', sans-serif;
-  margin: 0.5em 0; }
-
-h1 {
-  font-size: 2em;
-  /* 32px */
-  line-height: 1.25em; }
-
-h2 {
-  font-size: 1.625em;
-  /* 26px */
-  line-height: 1.15384615em; }
-
-h3 {
-  font-size: 1.375em;
-  /* 22px */
-  line-height: 1.13636364em;
-  font-weight: 400; }
-
-h4 {
-  font-size: 1.125em;
-  /* 18px */
-  line-height: 1.11111111em; }
-
-h5, h6 {
-  font-size: 1em;
-  /* 16px */
-  font-weight: normal; }
-
-p {
-  margin: 1em 0; }
-
-#meta header h1 {
-  font-size: 2.65em; }
-#meta header h2 {
-  font-weight: 300; }
-
-.work-item header {
-  border-bottom: 1px solid #eee; }
-  .work-item header p {
-    font-weight: 500; }
-.work-item article p {
-  font-weight: 400; }
-
-.work-item a.toggle {
-  float: right;
-  margin: 5px 10px 0;
-  color: #646464; }
-
-.work-item a.toggle:hover {
-  color: #000; }
-
-/*# sourceMappingURL=main.css.map */
+Backtrace:
+public/styles/sass/base.scss:61
+public/styles/sass/main.scss:1
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/scss/parser.rb:1165:in `expected'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/scss/parser.rb:1099:in `expected'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/scss/parser.rb:1094:in `tok!'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/scss/parser.rb:761:in `block in try_declaration'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/scss/parser.rb:1139:in `call'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/scss/parser.rb:1139:in `rethrow'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/scss/parser.rb:766:in `try_declaration'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/scss/parser.rb:696:in `declaration_or_ruleset'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/scss/parser.rb:661:in `block_child'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/scss/parser.rb:650:in `block_contents'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/scss/parser.rb:642:in `block'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/scss/parser.rb:636:in `ruleset'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/scss/parser.rb:660:in `block_child'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/scss/parser.rb:653:in `block_contents'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/scss/parser.rb:117:in `stylesheet'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/scss/parser.rb:42:in `parse'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/engine.rb:393:in `_to_tree'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/engine.rb:299:in `to_tree'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:313:in `block in visit_import'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/stack.rb:88:in `block in with_import'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/stack.rb:115:in `with_frame'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/stack.rb:88:in `with_import'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:312:in `visit_import'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/stack.rb:115:in `with_frame'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:52:in `map'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/root_node.rb:36:in `css_tree'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/engine.rb:285:in `render_with_sourcemap'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/exec/sass_scss.rb:396:in `run'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/exec/sass_scss.rb:62:in `process_result'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/exec/base.rb:52:in `parse'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/lib/sass/exec/base.rb:19:in `parse!'
+/var/lib/gems/1.9.1/gems/sass-3.4.5/bin/sass:13:in `<top (required)>'
+/usr/local/bin/sass:23:in `load'
+/usr/local/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"  margin\": expected \";\", was \": 1em 0;\"\A         on line 61 of public/styles/sass/base.scss\A         from line 1 of public/styles/sass/main.scss\A \A 56:   font-weight : normal;\A 57: }\A 58: \A 59: p {\A 60:   font-size: 1.0625em /* 17px */\A 61:   margin: 1em 0;\A 62: }"; }
