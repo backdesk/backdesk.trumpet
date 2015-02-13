@@ -1,0 +1,36 @@
+.side-block {
+   margin-bottom: 20px;
+}
+
+.side-block {
+  ul {
+    list-style : none;
+  }
+
+  ul, li {
+     margin:0;
+     padding:0;
+  }
+}
+
+.side-block p {
+  i {
+    margin-right: 5px;
+  }
+}
+
+.side-block li {
+  p {
+     margin: 0;
+     width : auto;
+     font-size: 0.9375em /* 15px */;
+     opacity: 0.9;
+  }
+}
+
+.side-block h4 {
+   margin: 0 0 5px 0;
+   font-weight: normal;
+   width : auto;
+}
+
