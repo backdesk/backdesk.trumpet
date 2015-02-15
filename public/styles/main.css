@@ -1,17 +1,14 @@
 /**
  * Base layout.
  */
-#app {
+main {
   width: 60%;
   margin: 0 auto;
   overflow: hidden; }
-  #app main {
-    width: 60%;
-    float: left; }
-  #app aside {
-    margin-top: 186px;
-    float: right;
-    width: 30%; }
+
+aside {
+  float: right;
+  width: 30%; }
 
 footer {
   padding: 10px;
@@ -72,6 +69,10 @@ li {
 #meta header h2 {
   font-weight: 300; }
 
+#work {
+  width: 60%;
+  float: left; }
+
 .work-item {
   margin-top: 2.1875em;
   /* 35px */ }
@@ -106,6 +107,9 @@ li {
   height: 0;
   opacity: 0;
   overflow: hidden; }
+
+#side {
+  margin-top: 24px; }
 
 .side-block {
   margin-bottom: 20px; }

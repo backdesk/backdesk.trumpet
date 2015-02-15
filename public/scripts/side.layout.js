@@ -19,9 +19,7 @@ var SideLayout = Marionette.LayoutView.extend({
   },
 
   onRender : function () {
-    this.listenTo(this.model, 'change:availability', function () {
-      this._showAvailability();
-    })
+    this._showAvailability();
   }
 });
 

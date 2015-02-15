@@ -17,10 +17,10 @@ describe('resume controller', function () {
     expect(ResumeController).toBeDefined();
   });
 
-  it('should throw an exception if no layout is provided', function () {
+  it('should throw an exception if no region is provided', function () {
     expect(function () {
       return new ResumeController()
-    }).toThrow(new Error('Please provide a layout'));
+    }).toThrow(new Error('No region provided'));
   });
 
   it('should call to auth when unauthorized', function () {
@@ -38,8 +38,9 @@ describe('resume controller', function () {
 
   it('should provide a configured region', function () {
     var ctrl = new ResumeController({
-      layout : layout,
-      region : 'main'
+      region : new Marionette.Region({
+        el: document.createElement('main')
+      })
     });
 
     expect(ctrl._getRegion()).toEqual(jasmine.any(Marionette.Region));

@@ -9,17 +9,13 @@ var ResumeController = Marionette.Object.extend({
   initialize : function (options) {
     _.bindAll(this, 'show', '_onResumeDone', '_onResumeFail');
 
-    _.extend(this, _.pick(options, 'layout', 'region'));
+    _.extend(this, _.pick(options, 'region'));
 
-    if(!this.layout) {
-      throw new Error('Please provide a layout');
+    if(!this.region) {
+      throw Error('No region provided');
     }
 
     this.resume = resumeModel;
-
-    this.listenTo(this.layout, 'render', function(){
-      this.show(this.options.region)
-    });
   },
 
   show : function () {
@@ -41,11 +37,7 @@ var ResumeController = Marionette.Object.extend({
   },
 
   _getRegion : function () {
-    if(!this.layout) {
-      throw 'No layout provided';
-    }
-
-    return this.layout.getRegion(this.region);
+    return this.region;
   },
 
   _onResumeDone : function () {

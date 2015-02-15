@@ -1,24 +1,16 @@
 var Marionette = require('backbone.marionette'),
-    RootView = require('./scripts/root.view'),
-    ResumeController = require('./scripts/resume.controller'),
-    SideController = require('./scripts/side.controller');
-
-var root = new RootView();
+    ResumeController = require('./scripts/resume.controller');
 
 var app = new Marionette.Application({
   main : new ResumeController({
-    layout : root,
-    region : 'main'
-  }),
-
-  side : new SideController({
-    layout : root,
-    region : 'side'
+  	region : new Marionette.Region({
+      el: $('main')
+    })
   })
 });
 
 app.addInitializer(function () {
-  root.render();
+	app.main.show();
 });
 
 app.start();
