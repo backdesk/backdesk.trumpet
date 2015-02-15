@@ -36,13 +36,13 @@ describe('resume controller', function () {
     expect(ctrl.auth).toHaveBeenCalled();
   });
 
-  it('should provide a configured region', function () {
+  it('should accept a configured region', function () {
     var ctrl = new ResumeController({
       region : new Marionette.Region({
         el: document.createElement('main')
       })
     });
 
-    expect(ctrl._getRegion()).toEqual(jasmine.any(Marionette.Region));
+    expect(ctrl.region).toEqual(jasmine.any(Marionette.Region));
   });
 });

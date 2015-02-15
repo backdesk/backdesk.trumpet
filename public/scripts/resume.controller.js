@@ -36,12 +36,8 @@ var ResumeController = Marionette.Object.extend({
     }));
   },
 
-  _getRegion : function () {
-    return this.region;
-  },
-
   _onResumeDone : function () {
-    this._getRegion().show(new ResumeLayout({
+    this.region.show(new ResumeLayout({
       model : this.resume
     }));
   },
