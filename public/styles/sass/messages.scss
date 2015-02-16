@@ -1,0 +1,11 @@
+#messages {
+	a {
+		color: rgba(255, 255,255, 0.7);
+		font-size: 1em;
+		font-weight: 600;
+	}
+
+	a:hover, a:visited, a:active, a:focus {
+		text-decoration: none;
+	}
+}
