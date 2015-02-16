@@ -36,7 +36,7 @@ describe('resume controller', function () {
     expect(ctrl.auth).toHaveBeenCalled();
   });
 
-  it('should accept a configured region', function () {
+  it('should accept a region', function () {
     var ctrl = new ResumeController({
       region : new Marionette.Region({
         el: document.createElement('main')

@@ -31,7 +31,7 @@ var ResumeController = Marionette.Object.extend({
   },
 
   auth : function () {
-    this._getRegion().show(new AuthView({
+    this.region.show(new AuthView({
       onAuthSuccess : this.show
     }));
   },
