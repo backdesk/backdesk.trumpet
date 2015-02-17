@@ -1,7 +1,6 @@
 var Marionette = require('backbone.marionette'),
     _ = require('underscore'),
     events = require('../events'),
-    userModel = require('../user/models/user.model'),
     resumeModel = require('./models/resume.model'),
     ResumeLayout = require('./views/resume.layout'),
     AuthView = require('../user/views/auth.view');
@@ -20,12 +19,12 @@ var ResumeController = Marionette.Object.extend({
   },
 
   show : function () {
-    var user = events.reqres.request('user');
+    var token = events.reqres.request('user:token');
 
-    if(user && user.get('token')) {
+    if(token) {
       this.resume.fetch({
         headers : {
-          'Authorization' : 'Bearer ' + userModel.get('token')
+          'Authorization' : 'Bearer ' + token
         }
       }).then(this._onResumeDone, this._onResumeFail);
     } else {

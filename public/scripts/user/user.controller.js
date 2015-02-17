@@ -13,8 +13,8 @@ var UserController = Marionette.Object.extend({
       throw Error('No region provided');
     }
 
-    events.reqres.setHandler('user', function(){
-      return userModel;
+    events.reqres.setHandler('user:token', function(){
+      return userModel.get('token');
     });
   },
 
