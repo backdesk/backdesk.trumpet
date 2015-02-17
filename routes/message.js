@@ -10,7 +10,9 @@ router.get('/messages', function (req, res) {
     owner : req.user._id
   };
 
-  Message.find(query, function (err, messages) {
+  Message.find(query)
+  .sort('createdAt')
+  .exec(function (err, messages) {
     if(err) {
       res.status(500).send(err);
     }
@@ -47,8 +49,7 @@ router.post('/messages', function (req, res) {
   var message = new Message({
     message : req.body.message,
     subject : req.body.subject,
-    owner : req.user._id,
-    createdAt : new Date()
+    owner : req.user._id
   });
 
   message.save(function (err) {
