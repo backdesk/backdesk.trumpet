@@ -1,5 +1,6 @@
 var Marionette = require('backbone.marionette'),
     _ = require('underscore'),
+    commands = require('./commands'),
     userModel = require('./user.model'),
     resumeModel = require('./resume.model'),
     ResumeLayout = require('./resume.layout'),
@@ -40,6 +41,8 @@ var ResumeController = Marionette.Object.extend({
     this.region.show(new ResumeLayout({
       model : this.resume
     }));
+
+    commands.execute('menu:show');
   },
 
   _onResumeFail : function () {
