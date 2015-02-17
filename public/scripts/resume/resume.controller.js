@@ -15,6 +15,8 @@ var ResumeController = Marionette.Object.extend({
       throw Error('No region provided');
     }
 
+    this.listenTo(events.dispatcher, 'user:authenticated', this.show);
+
     this.resume = resumeModel;
   },
 
@@ -33,7 +35,7 @@ var ResumeController = Marionette.Object.extend({
   },
 
   auth : function () {
-    events.command.execute('user:auth');
+    events.commands.execute('user:auth');
   },
 
   _onResumeDone : function () {
@@ -45,7 +47,7 @@ var ResumeController = Marionette.Object.extend({
   },
 
   _onResumeFail : function () {
-    events.command.execute('user:auth');
+    this.auth();
   }
 });
 

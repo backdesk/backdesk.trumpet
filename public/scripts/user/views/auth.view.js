@@ -9,7 +9,7 @@ var AuthView = Marionette.ItemView.extend({
 
   events : {
     'submit' : '_onSubmit'
-  },
+  }, 
 
   model : userModel,
 
@@ -38,26 +38,13 @@ var AuthView = Marionette.ItemView.extend({
       errors.push('invalid token');
     }
 
-    if(errors.length === 0) {
-      this.model.fetch({
-        data : {
-          email : email,
-          token : token
-        }
-      }).then(this._onAuthSuccess, this._onAuthFailure);
-    } else {
+    if(!errors.length === 0) {
       console.log('bad input');
+    } else {
+      this.trigger('form:submitted', email, token);
     }
 
     return false;
-  },
-
-  _onAuthSuccess : function () {
-    this.options.onAuthSuccess();
-  },
-
-  _onAuthFailure : function () {
-    console.log('auth failed');
   }
 });
 
