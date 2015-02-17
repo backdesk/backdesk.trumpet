@@ -3,7 +3,8 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     path = require('path'),
     mongoose = require('./mongoose'),
-    restRoutes = require('./routes/resume'),
+    resumeRoutes = require('./routes/resume'),
+    messageRoutes = require('./routes/message'),
     userRoutes = require('./routes/user'),
     expressJwt = require('express-jwt');
 
@@ -19,7 +20,8 @@ app.use(expressJwt({
 }).unless({ path : ['/user/auth']}));
 
 app.use('/user', userRoutes);
-app.use('/api',  restRoutes);
+app.use('/api', messageRoutes);
+app.use('/api', resumeRoutes);
 
 var host = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1',
     port = process.env.OPENSHIFT_NODEJS_PORT || 9999;

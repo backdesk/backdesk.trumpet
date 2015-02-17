@@ -10,7 +10,7 @@ router.get('/auth', function (req, res) {
     if(user) {
       res.json({
         token : jwt.sign(user.toObject(), 'mv2qtuWbU9N7dLZB5bnt', {
-          expiresInMinutes: 60
+          expiresInMinutes: 60 * 5
         })
       });
     } else {

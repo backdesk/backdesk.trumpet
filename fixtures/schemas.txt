@@ -1,0 +1,33 @@
+users
+
+[{
+	"email":"james@backdesk.io",
+	"token":"59tg3jRH7IHBR3h9iNVk",
+	"resume" : "54d6ad999376b3806453e509"
+	"scopes" : {
+		"admin" : true
+	}
+},{
+	"email":"demo@demo.org",
+	"token":"KqcwkqbqJynBRHgviwoh",
+	"resume" : "54d6ad999376b3806453e509"
+	"scopes" : {
+		"admin" : false,
+		"muted" : true
+	}
+}]
+
+threads
+
+[{
+	"subject": "This is message #01"
+	"createdBy": ObjectId("54d6adef9376b3806453e50a")
+	"messages" : [
+		{ 
+			"message": "This is a dummy message used for testing.",
+			"owner" : ObjectId("54d6adef9376b3806453e50a")
+			"isRead": false
+		},
+
+	]
+}]
