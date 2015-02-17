@@ -6,8 +6,6 @@ var express = require('express'),
 var Message = require('../models/message');
 
 router.get('/messages', function (req, res) {
-  console.log(req.user);
-
   var query = {
     owner : req.user._id
   };
