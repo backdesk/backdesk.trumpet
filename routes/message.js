@@ -10,8 +10,6 @@ router.get('/messages', function (req, res) {
     owner : req.user._id
   };
 
-  console.log(query);
-
   Message.find(query, function (err, messages) {
     if(err) {
       res.status(500).send(err);
