@@ -2,17 +2,6 @@ var Marionette = require('backbone.marionette'),
     ResumeController = require('../../public/scripts/resume/resume.controller');
 
 describe('resume controller', function () {
-  var layout;
-
-  beforeEach(function () {
-    layout = new Marionette.LayoutView();
-    layout.addRegion('main', 'main');
-  });
-
-  afterEach(function () {
-    layout.destroy();
-  });
-
   it('should exist', function () {
     expect(ResumeController).toBeDefined();
   });
@@ -25,7 +14,6 @@ describe('resume controller', function () {
 
   it('should call to auth when unauthorized', function () {
     var ctrl = new ResumeController({
-      layout : layout,
       region : 'main'
     });
 

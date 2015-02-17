@@ -1,4 +1,5 @@
 var path = require('path'),
+    RewirePlugin = require("rewire-webpack"),
     webpack = require('webpack');
 
 module.exports = function(config) {
@@ -48,7 +49,8 @@ module.exports = function(config) {
             new webpack.ProvidePlugin({
                 $: 'jquery',
                 Backbone: 'backbone'
-            })
+            }),
+            new RewirePlugin()
         ]
     },
 

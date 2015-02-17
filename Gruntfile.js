@@ -39,7 +39,7 @@ module.exports = function(grunt) {
        */
       "build-dev" : {
         devtool : "sourcemap",
-        debug : true
+        debug : true,
       }
     },
 
