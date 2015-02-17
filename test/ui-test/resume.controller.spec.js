@@ -1,5 +1,5 @@
 var Marionette = require('backbone.marionette'),
-    ResumeController = require('../../public/scripts/resume.controller');
+    ResumeController = require('../../public/scripts/resume/resume.controller');
 
 describe('resume controller', function () {
   var layout;

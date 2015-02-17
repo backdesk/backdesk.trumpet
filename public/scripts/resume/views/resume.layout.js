@@ -1,10 +1,10 @@
 var Marionette = require('backbone.marionette'),
     SideLayout = require('./side.layout'),
     MetaView = require('./meta.view'),
-    MetaModel = require('./meta.model'),
-    WorkCollection = require('./work.collection'),
+    MetaModel = require('../models/meta.model'),
+    WorkCollection = require('../collections/work.collection'),
     WorkCollectionView = require('./work.collection.view'),
-    template = require('../templates/resume.html');
+    template = require('./templates/resume.html');
 
 var ResumeView = Marionette.LayoutView.extend({
   template : template,

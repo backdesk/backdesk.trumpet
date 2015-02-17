@@ -1,4 +1,4 @@
-var WorkModel = require('./work.model');
+var WorkModel = require('../models/work.model');
 
 var WorkCollection = Backbone.Collection.extend({
   url : '/api/resume',

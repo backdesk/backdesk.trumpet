@@ -1,8 +1,8 @@
 var Marionette = require('backbone.marionette'),
     _ = require('underscore'),
     validator = require('validator'),
-    userModel = require('./user.model'),
-    template = require('../templates/auth.html');
+    userModel = require('../models/user.model'),
+    template = require('./templates/auth.html');
 
 var AuthView = Marionette.ItemView.extend({
   template : template,

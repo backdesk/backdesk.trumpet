@@ -1,3 +1,5 @@
-var Marionette = require('backbone.marionette');
-
-module.exports = new Backbone.Wreqr.EventAggregator();
+module.exports = {
+	reqres : new Backbone.Wreqr.RequestResponse(),
+	events : new Backbone.Wreqr.EventAggregator(),
+	commands : new Backbone.Wreqr.Commands()
+}

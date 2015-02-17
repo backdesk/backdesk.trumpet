@@ -1,6 +1,7 @@
 var Marionette = require('backbone.marionette'),
-    ResumeController = require('./scripts/resume.controller'),
-    MenuController = require('./scripts/menu/menu.controller');
+    ResumeController = require('./scripts/resume/resume.controller'),
+    MenuController = require('./scripts/menu/menu.controller'),
+    UserController = require('./scripts/user/user.controller');
 
 var app = new Marionette.Application({
   main : new ResumeController({
@@ -12,6 +13,12 @@ var app = new Marionette.Application({
   menu : new MenuController({
   	region : new Marionette.Region({
       el: $('nav')
+    })
+  }),
+
+  user : new UserController({
+    region : new Marionette.Region({
+      el: $('main')
     })
   })
 });

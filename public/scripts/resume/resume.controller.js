@@ -1,10 +1,10 @@
 var Marionette = require('backbone.marionette'),
     _ = require('underscore'),
-    commands = require('./commands'),
-    userModel = require('./user.model'),
-    resumeModel = require('./resume.model'),
-    ResumeLayout = require('./resume.layout'),
-    AuthView = require('./auth.view');
+    events = require('../events'),
+    userModel = require('../user/models/user.model'),
+    resumeModel = require('./models/resume.model'),
+    ResumeLayout = require('./views/resume.layout'),
+    AuthView = require('../user/views/auth.view');
 
 var ResumeController = Marionette.Object.extend({
   initialize : function (options) {
@@ -20,7 +20,9 @@ var ResumeController = Marionette.Object.extend({
   },
 
   show : function () {
-    if(userModel.get('token')) {
+    var user = events.reqres.request('user');
+
+    if(user && user.get('token')) {
       this.resume.fetch({
         headers : {
           'Authorization' : 'Bearer ' + userModel.get('token')
@@ -32,9 +34,7 @@ var ResumeController = Marionette.Object.extend({
   },
 
   auth : function () {
-    this.region.show(new AuthView({
-      onAuthSuccess : this.show
-    }));
+    events.command.execute('user:auth');
   },
 
   _onResumeDone : function () {
@@ -42,11 +42,11 @@ var ResumeController = Marionette.Object.extend({
       model : this.resume
     }));
 
-    commands.execute('menu:show');
+    events.commands.execute('menu:load');
   },
 
   _onResumeFail : function () {
-    this.auth();
+    events.command.execute('user:auth');
   }
 });
 

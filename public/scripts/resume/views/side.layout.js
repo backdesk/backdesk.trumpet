@@ -1,7 +1,7 @@
 var Marionette = require('backbone.marionette'),
     AvailabilityView = require('./availability.view'),
-    AvailabilityModel = require('./availability.model'),
-    template = require('../templates/side.html');
+    AvailabilityModel = require('../models/availability.model'),
+    template = require('./templates/side.html');
 
 var SideLayout = Marionette.LayoutView.extend({
   id : 'side-menu',

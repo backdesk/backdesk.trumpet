@@ -1,6 +1,6 @@
 var Marionette = require('backbone.marionette'),
-    MenuLayout = require('./menu.layout'),
-    commands = require('../commands'),
+    MenuLayout = require('./views/menu.layout'),
+    events = require('../events'),
     _ = require('underscore');
 
 var MenuController = Marionette.Object.extend({
@@ -9,7 +9,7 @@ var MenuController = Marionette.Object.extend({
 
     _.extend(this, _.pick(options, 'region'));
 
-    commands.setHandler('menu:show', this.show);
+    events.commands.setHandler('menu:load', this.show);
 
     if(!this.region) {
       throw Error('No region provided');

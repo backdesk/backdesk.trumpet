@@ -1,5 +1,5 @@
 var Marionette = require('backbone.marionette'),
-    template = require('../../templates/menu.html');
+    template = require('./templates/menu.html');
 
 var ResumeView = Marionette.LayoutView.extend({
   template : template,
@@ -12,7 +12,7 @@ var ResumeView = Marionette.LayoutView.extend({
   },
 
   onRender : function () {
-   
+  	console.log('menu loaded');
   }
 });
 

@@ -1,6 +1,6 @@
 var Marionette = require('backbone.marionette'),
     moment = require('moment'),
-    template = require('../templates/availability.html');
+    template = require('./templates/availability.html');
 
 var AvailabilityView = Marionette.ItemView.extend({
   template : template,
