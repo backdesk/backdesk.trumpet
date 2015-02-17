@@ -6,9 +6,13 @@ var express = require('express'),
 var Message = require('../models/message');
 
 router.get('/messages', function (req, res) {
+  console.log(req.user);
+
   var query = {
-    owner : mongoose.Schema.ObjectId(req.user._id)
+    owner : req.user._id
   };
+
+  console.log(query);
 
   Message.find(query, function (err, messages) {
     if(err) {
@@ -29,10 +33,12 @@ router.get('/messages/:id', function (req, res) {
       }
     }
 
-    if(!message) {
+    if(!message || message && (message.owner.toString() !== req.user._id)) {
       res.sendStatus(404);
     } else {
-      res.json(message);
+      if(message) {
+        res.json(message);
+      }
     }
   });
 });
