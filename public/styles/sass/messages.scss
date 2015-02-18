@@ -1,4 +1,6 @@
 #messages {
+	position: relative;
+	
 	a {
 		color: rgba(255, 255,255, 0.7);
 		font-size: 1em;
@@ -7,5 +9,36 @@
 
 	a:hover, a:visited, a:active, a:focus {
 		text-decoration: none;
+	}
+}
+
+.message-list {
+	position: absolute;
+	padding: 5px 0; 
+	list-style: none;
+	width: 320px;
+	border: 1px solid #B2B2B2;
+	border-top: 0;
+	background-color: #fff;
+	margin: 10px 0 0 -246px;
+	z-index: 1000;
+
+	.message-item {
+		font-size: 0.89em;
+		border-bottom: 1px solid #ddd;
+		padding: 10px;
+
+		h5 {
+			font-weight: bolder;
+			margin: 0;
+		}
+
+		p {
+			margin: 0;
+		}
+	}
+
+	.message-item:last-of-type {
+		border-bottom: none;
 	}
 }

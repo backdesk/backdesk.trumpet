@@ -1,7 +1,8 @@
 var Marionette = require('backbone.marionette'),
-    ResumeController = require('./scripts/resume/resume.controller'),
-    MenuController = require('./scripts/menu/menu.controller'),
-    UserController = require('./scripts/user/user.controller');
+    ResumeController = require('./resume/resume.controller'),
+    MenuController = require('./menu/menu.controller'),
+    UserController = require('./user/user.controller'),
+    MessageController = require('./messages/message.controller');
 
 var app = new Marionette.Application({
   main : new ResumeController({

@@ -138,12 +138,36 @@ li {
   font-weight: normal;
   width: auto; }
 
-#messages a {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 1em;
-  font-weight: 600; }
-#messages a:hover, #messages a:visited, #messages a:active, #messages a:focus {
-  text-decoration: none; }
+#messages {
+  position: relative; }
+  #messages a {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1em;
+    font-weight: 600; }
+  #messages a:hover, #messages a:visited, #messages a:active, #messages a:focus {
+    text-decoration: none; }
+
+.message-list {
+  position: absolute;
+  padding: 5px 0;
+  list-style: none;
+  width: 320px;
+  border: 1px solid #B2B2B2;
+  border-top: 0;
+  background-color: #fff;
+  margin: 10px 0 0 -246px;
+  z-index: 1000; }
+  .message-list .message-item {
+    font-size: 0.89em;
+    border-bottom: 1px solid #ddd;
+    padding: 10px; }
+    .message-list .message-item h5 {
+      font-weight: bolder;
+      margin: 0; }
+    .message-list .message-item p {
+      margin: 0; }
+  .message-list .message-item:last-of-type {
+    border-bottom: none; }
 
 #settings a {
   font-size: 20px;
@@ -151,10 +175,11 @@ li {
   margin-left: 15px; }
 
 nav {
-  position: fixed;
+  position: relative;
   background-color: #000;
   padding: 10px;
-  width: 100%; }
+  width: 100%;
+  height: 40px; }
 
 nav .nav-inner {
   width: 60%;

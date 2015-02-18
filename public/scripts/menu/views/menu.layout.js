@@ -1,4 +1,7 @@
 var Marionette = require('backbone.marionette'),
+    MessageMenuView = require('./message.menu.view'),
+    MessageCollection = require('../collections/message.collection'),
+    events = require('../../events'),
     template = require('./templates/menu.html');
 
 var ResumeView = Marionette.LayoutView.extend({
@@ -12,7 +15,9 @@ var ResumeView = Marionette.LayoutView.extend({
   },
 
   onRender : function () {
-  	console.log('menu loaded');
+    this.messages.show(new MessageMenuView({
+      collection :  new MessageCollection()
+    }));
   }
 });
 

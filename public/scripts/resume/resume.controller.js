@@ -2,8 +2,7 @@ var Marionette = require('backbone.marionette'),
     _ = require('underscore'),
     events = require('../events'),
     resumeModel = require('./models/resume.model'),
-    ResumeLayout = require('./views/resume.layout'),
-    AuthView = require('../user/views/auth.view');
+    ResumeLayout = require('./views/resume.layout');
 
 var ResumeController = Marionette.Object.extend({
   initialize : function (options) {

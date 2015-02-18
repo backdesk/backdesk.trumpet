@@ -1,7 +1,7 @@
 var webpack = require('webpack');
 
 module.exports = {
-  entry: './public/client.js',
+  entry: './public/scripts/client.js',
 
   output: {
     path: __dirname + '/build',

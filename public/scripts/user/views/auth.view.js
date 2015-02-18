@@ -13,10 +13,6 @@ var AuthView = Marionette.ItemView.extend({
 
   model : userModel,
 
-  initialize : function () {
-    _.bindAll(this, '_onAuthSuccess', '_onAuthFailure');
-  },
-
   _sanitizeCredential : function (credential) {
     credential = validator.trim(credential);
     credential = validator.escape(credential);

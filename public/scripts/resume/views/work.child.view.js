@@ -2,7 +2,7 @@ var Marionette = require('backbone.marionette'),
     marked = require('marked'),
     template = require('./templates/work.child.html');
 
-var WorkItemView = Marionette.ItemView.extend({
+var WorkChildView = Marionette.ItemView.extend({
   template : template,
 
   tagName : 'article',
@@ -42,4 +42,4 @@ var WorkItemView = Marionette.ItemView.extend({
   }
 });
 
-module.exports = WorkItemView;
+module.exports = WorkChildView;
