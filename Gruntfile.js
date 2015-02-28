@@ -63,7 +63,7 @@ module.exports = function(grunt) {
       },
 
       app : {
-        files : ['public/**/*.js'],
+        files : ['public/**/*.js', 'public/**/*.html'],
         tasks : ['webpack:build-dev'],
       },
 

@@ -22,6 +22,7 @@ app.use(expressJwt({
 app.use('/user', userRoutes);
 app.use('/api', messageRoutes);
 app.use('/api', resumeRoutes);
+app.use('/admin', resumeRoutes);
 
 var host = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1',
     port = process.env.OPENSHIFT_NODEJS_PORT || 9999;

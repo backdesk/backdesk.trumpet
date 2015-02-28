@@ -1,7 +1,7 @@
 #messages {
 	position: relative;
 	
-	a {
+	a.message-btn {
 		color: rgba(255, 255,255, 0.7);
 		font-size: 1em;
 		font-weight: 600;
@@ -13,6 +13,7 @@
 }
 
 .message-list {
+	display: none;
 	position: absolute;
 	padding: 5px 0; 
 	list-style: none;
@@ -24,17 +25,22 @@
 	z-index: 1000;
 
 	.message-item {
-		font-size: 0.89em;
-		border-bottom: 1px solid #ddd;
+		font-size: 1em;
 		padding: 10px;
 
-		h5 {
-			font-weight: bolder;
-			margin: 0;
-		}
+		a.message-link {
+			display: block;
+			
+			p {
+				text-transform: capitalize;
+				font-weight: 600;
+				margin: 0;
+				color: rgba(0,0,0, 0.9);
+			}
 
-		p {
-			margin: 0;
+			small {
+				color: rgba(0,0,0, 0.8);
+			}
 		}
 	}
 

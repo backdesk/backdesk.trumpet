@@ -140,7 +140,7 @@ li {
 
 #messages {
   position: relative; }
-  #messages a {
+  #messages a.message-btn {
     color: rgba(255, 255, 255, 0.7);
     font-size: 1em;
     font-weight: 600; }
@@ -148,6 +148,7 @@ li {
     text-decoration: none; }
 
 .message-list {
+  display: none;
   position: absolute;
   padding: 5px 0;
   list-style: none;
@@ -158,14 +159,17 @@ li {
   margin: 10px 0 0 -246px;
   z-index: 1000; }
   .message-list .message-item {
-    font-size: 0.89em;
-    border-bottom: 1px solid #ddd;
+    font-size: 1em;
     padding: 10px; }
-    .message-list .message-item h5 {
-      font-weight: bolder;
-      margin: 0; }
-    .message-list .message-item p {
-      margin: 0; }
+    .message-list .message-item a.message-link {
+      display: block; }
+      .message-list .message-item a.message-link p {
+        text-transform: capitalize;
+        font-weight: 600;
+        margin: 0;
+        color: rgba(0, 0, 0, 0.9); }
+      .message-list .message-item a.message-link small {
+        color: rgba(0, 0, 0, 0.8); }
   .message-list .message-item:last-of-type {
     border-bottom: none; }
 
